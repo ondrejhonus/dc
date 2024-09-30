@@ -1,6 +1,6 @@
 # About
 This is a program, that is meant to annoy you when you accidentally type 'dc' instead of 'cd'.
-I got this idea from the man, the myth and the legend (Toyoda Masashi)[https://github.com/mtoyoda/sl].
+I got this idea from the man, the myth and the legend [Toyoda Masashi](https://github.com/mtoyoda/sl).
 
 # Instalation
 ```
