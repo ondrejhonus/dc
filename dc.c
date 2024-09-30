@@ -19,7 +19,7 @@ int main(void) {
     signal(SIGINT, SIG_IGN);
 
     system("echo You fool!");
-    // Countdown to extintion
+    // Countdown to extinction
     for (int i = 5; i >= 0; i--) {
         char msg[30] = "echo ";
         char s_i[5];
