@@ -2,6 +2,8 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
+#include <signal.h>
+#include <unistd.h>
 
 // Delay in seconds
 void delay(int delay)
@@ -12,13 +14,16 @@ void delay(int delay)
 }
 
 int main(void) {
+    //Disable CTRL+C
+    signal(SIGINT, SIG_IGN);
+
     system("echo You fool!");
+    // Countdown to extintion
     for (unsigned int i = 1; i <= 5; i++)
     {
         delay(1000);
         char msg[30] = "echo ";
         char s_i[5];
-        //itoa(i, s_i, 10);
         snprintf(s_i, 10, "%d", i );
         strcat(msg, s_i);
         system(msg);
