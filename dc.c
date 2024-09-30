@@ -6,11 +6,12 @@
 #include <unistd.h>
 
 // Delay in seconds
-void delay(int delay)
-{
-    int milli_seconds = 1000 * delay;
-    clock_t start_time = clock();
-    while (clock() < start_time + milli_seconds);
+void delay(int delay) {
+    //ms to s
+    delay += 1000;
+    int ms = 1000 * delay;
+    clock_t start = clock();
+    while (clock() < start + ms);
 }
 
 int main(void) {
@@ -19,15 +20,13 @@ int main(void) {
 
     system("echo You fool!");
     // Countdown to extintion
-    for (unsigned int i = 1; i <= 5; i++)
-    {
-        delay(1000);
+    for (int i = 5; i >= 0; i--) {
         char msg[30] = "echo ";
         char s_i[5];
         snprintf(s_i, 10, "%d", i );
         strcat(msg, s_i);
         system(msg);
+        delay(1);
     }
-    
     return 0;
 }
